@@ -7,23 +7,23 @@ const computer = {
   currentChoice: null,
   wins: 0
 };
+const playerBtns = null;
+const computerBtns = null;
 document.addEventListener("DOMContentLoaded", ready);
 function ready(){
-const playerBtns = document.querySelectorAll('.player');
-const computerBtns = document.querySelectorAll('.computer')
+playerBtns = document.querySelectorAll('.player');
+computerBtns = document.querySelectorAll('.computer')
 //add event listener to all buttons used to select a throw
 playerBtns.forEach(
   function(e){
     e.addEventListener('click',startGame);
   }
 );
-console.log("ready did dun run");
 }
 
 //adjust colors on buttons to highlight clicked and black out the rest
 //generate computers throw then start a countdown to reveal the results
 function startGame(e){
-  alert("click!");
   adjustBtns(parseInt(e.target.id), playerBtns);
   player.currentChoice = parseInt(e.target.id);
   computer.currentChoice = getChoice();
