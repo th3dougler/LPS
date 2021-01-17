@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.addEventListener('click',startGame);
     }
   );
+  alert(playerBtn[0].innerText);
 });
 
 //adjust colors on buttons to highlight clicked and black out the rest
 //generate computers throw then start a countdown to reveal the results
 function startGame(e){
+  alert("click!");
   adjustBtns(parseInt(e.target.id), playerBtns);
   player.currentChoice = parseInt(e.target.id);
   computer.currentChoice = getChoice();
