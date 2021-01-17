@@ -7,8 +7,8 @@ const computer = {
   currentChoice: null,
   wins: 0
 };
-const playerBtns = null;
-const computerBtns = null;
+const playerBtns;
+const computerBtns;
 document.addEventListener("DOMContentLoaded", ready);
 function ready(){
 playerBtns = document.querySelectorAll('.player');
