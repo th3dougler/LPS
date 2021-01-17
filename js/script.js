@@ -1,19 +1,20 @@
 const choices = ["Lapis", "Papyrus", "Scalpellus"];
 const player = {
   currentChoice: null,
-  wins: 0
+  wins: 0,
+  buttons: null
 }
 const computer = {
   currentChoice: null,
-  wins: 0
+  wins: 0,
+  buttons: null
 };
-
 document.addEventListener("DOMContentLoaded", ready);
 function ready(){
-let playerBtns = document.querySelectorAll('.player');
-let computerBtns = document.querySelectorAll('.computer')
+player.buttons = document.querySelectorAll('.player');
+computer.buttons = document.querySelectorAll('.computer')
 //add event listener to all buttons used to select a throw
-playerBtns.forEach(
+player.buttons.forEach(
   function(e){
     e.addEventListener('click',startGame);
   }
@@ -23,7 +24,7 @@ playerBtns.forEach(
 //adjust colors on buttons to highlight clicked and black out the rest
 //generate computers throw then start a countdown to reveal the results
 function startGame(e){
-  adjustBtns(parseInt(e.target.id), playerBtns);
+  adjustBtns(parseInt(e.target.id), player.buttons);
   player.currentChoice = parseInt(e.target.id);
   computer.currentChoice = getChoice();
   document.querySelector('.results').innerText = "";
@@ -49,8 +50,8 @@ function adjustBtns(clickedId, buttonSet){
   }
 }
 function resetAllBtns() {
-  adjustBtns(null,computerBtns);
-  adjustBtns(null,playerBtns);
+  adjustBtns(null,computer.buttons);
+  adjustBtns(null,player.buttons);
 }
 //recursive countdown function, breaks loop when interation reaches zero
 //revealing the computers throw and the winner by calling the comparePlays function
@@ -61,7 +62,7 @@ function countDown(iteration){
   }
   else {
 
-    adjustBtns(computer.currentChoice,computerBtns);
+    adjustBtns(computer.currentChoice,computer.buttons);
     document.querySelector('.results').innerText = comparePlays(player.currentChoice,  computer.currentChoice);
     setTimeout(resetAllBtns,2000);
   }
