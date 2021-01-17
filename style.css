@@ -1,0 +1,82 @@
+body{
+  font-family: 'Courier New';
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mainBlock{
+  width: 100%;
+  max-width: 320px;
+  margin: 0.5em auto;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: .5em;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background: rgba(255,255,255,0.2)
+  
+
+}
+h1{
+  font-size: 2em;
+}
+h2{
+  font-size: 1.5em;
+}
+.button{
+  font-family: 'Courier New';
+  font-size: 1em;
+  background-color: rgba(0, 51, 102,1);
+  color: white;
+  margin: 0.5em;
+  padding: 0.8em;
+  
+  border: 1px solid black;
+  border-radius: 5px;
+  transition-duration: 0.8s;
+}
+
+button.button:hover{
+  background-color: rgb(26, 140, 255);
+}
+
+.choice{
+  background-color: rgb(26, 140, 255);
+}
+span.choice{
+  background-color: red;
+}
+.blocked{
+  background-color: black;
+}
+.blocked:hover{
+  background-color: black;
+}
+
+
+@media only screen and (max-height: 450px){
+  h1 h2 {
+    font-size: 1em;
+  }
+  .button {
+    padding: 0;
+    margin: 0;
+  }
+  .mainBlock{
+    margin: auto;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 300px){
+  h1, h2 {
+    font-size: 1em;
+  }
+  .mainBlock{
+    flex-direction: column;
+  }
+}
