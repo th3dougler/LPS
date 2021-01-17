@@ -7,17 +7,15 @@ const computer = {
   currentChoice: null,
   wins: 0
 };
-document.addEventListener("DOMContentLoaded", function(event) { 
-  const playerBtns = document.querySelectorAll('.player');
-  const computerBtns = document.querySelectorAll('.computer')
-  //add event listener to all buttons used to select a throw
-  playerBtns.forEach(
-    function(e){
-      e.addEventListener('click',startGame);
-    }
-  );
-  alert(playerBtn[0].innerText);
-});
+
+const playerBtns = document.querySelectorAll('.player');
+const computerBtns = document.querySelectorAll('.computer')
+//add event listener to all buttons used to select a throw
+playerBtns.forEach(
+  function(e){
+    e.addEventListener('click',startGame);
+  }
+);
 
 //adjust colors on buttons to highlight clicked and black out the rest
 //generate computers throw then start a countdown to reveal the results
