@@ -1,6 +1,4 @@
-
-alert("test");
-const choices = ["Lapis", "Papyrus", "Scalpellus"];
+alert("test");const choices = ["Lapis", "Papyrus", "Scalpellus"];
 const player = {
   currentChoice: null,
   wins: 0
