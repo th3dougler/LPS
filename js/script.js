@@ -7,14 +7,16 @@ const computer = {
   currentChoice: null,
   wins: 0
 };
-const playerBtns = document.querySelectorAll('.player');
-const computerBtns = document.querySelectorAll('.computer')
-//add event listener to all buttons used to select a throw
-playerBtns.forEach(
-  function(e){
-    e.addEventListener('click',startGame);
-  }
-);
+document.addEventListener("DOMContentLoaded", function(event) { 
+  const playerBtns = document.querySelectorAll('.player');
+  const computerBtns = document.querySelectorAll('.computer')
+  //add event listener to all buttons used to select a throw
+  playerBtns.forEach(
+    function(e){
+      e.addEventListener('click',startGame);
+    }
+  );
+});
 
 //adjust colors on buttons to highlight clicked and black out the rest
 //generate computers throw then start a countdown to reveal the results
@@ -62,7 +64,6 @@ function countDown(iteration){
     setTimeout(resetAllBtns,2000);
   }
 }
-resetAllBtns();
 function comparePlays(playX, playY){
   //where playX is the users throw, playY is the computers throw
   //rather than look for all possible outcomes, check for a tie game
