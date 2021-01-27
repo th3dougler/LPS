@@ -26,8 +26,12 @@ body {
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
 }
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
 h1 {
-  font-size: 2em;
+  font-size: 3em;
 }
 h2 {
   font-size: 1.5em;
@@ -75,12 +79,23 @@ span.choice {
     padding: 0;
   }
 }
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 675px) {
   h1,
   h2 {
     font-size: 1em;
   }
   .mainBlock {
     flex-direction: column;
+    width: 40%;
+  }
+  .button{
+    font-size: 1em;
+    margin:0;
+  }
+  .results {
+    flex-grow: 3;
+  }
+  body div{
+    display: inline;
   }
 }
